@@ -2,33 +2,32 @@ import string
 
 
 def get_intersection_of_arrays(array1, array2):
-    dictionary_array1 = {}
+    array1_as_dictionary = {}
     intersection_array = []
 
     for item in array1:
-        dictionary_array1[item] = True
+        array1_as_dictionary[item] = True
 
     for item2 in array2:
-        if item2 in dictionary_array1:
+        if item2 in array1_as_dictionary:
             intersection_array.append(item2)
 
     print('Intersection Array:', intersection_array)
 
 
-def get_first_duplicate_value_in_string(array_of_strings):
-    dictionary_for_my_string = {}
+def get_first_duplicate_value_in_string(array_of_characters):
+    dictionary_of_characters = {}
 
-    for character in array_of_strings:
-        if character in dictionary_for_my_string:
+    for character in array_of_characters:
+        if character in dictionary_of_characters:
             print('First duplicated character is:', character)
             break
         else:
-            dictionary_for_my_string[character] = True
+            dictionary_of_characters[character] = True
 
 
 def get_missing_letter(phrase):
     phrase_dictionary = dict.fromkeys(phrase.replace(" ", ""), True)
-    print(phrase_dictionary)
 
     for character in 'abcdefghijklmnopqrstuvwxyz':
         if not phrase_dictionary.get(character):
@@ -37,18 +36,16 @@ def get_missing_letter(phrase):
 
 
 def get_first_non_duplicated_character(my_string):
-    dictionary_for_my_string = {}
+    my_string_as_dictionary = {}
 
     for character in my_string:
-        if not dictionary_for_my_string.get(character):
-            dictionary_for_my_string[character] = 1
+        if not my_string_as_dictionary.get(character):
+            my_string_as_dictionary[character] = 1
         else:
-            dictionary_for_my_string[character] += 1
+            my_string_as_dictionary[character] += 1
 
-    print(dictionary_for_my_string)
-
-    for key in dictionary_for_my_string:
-        if dictionary_for_my_string[key] == 1:
+    for key in my_string_as_dictionary:
+        if my_string_as_dictionary[key] == 1:
             print('First non duplicated character is:', key)
             break
 
