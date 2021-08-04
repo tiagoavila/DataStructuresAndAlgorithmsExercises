@@ -1,12 +1,12 @@
 def reverse_string(my_string):
-    queue = []
+    stack = []
     reversed_string = ""
 
     for character in my_string:
-        queue.append(character)
+        stack.append(character)
 
     for character in my_string:
-        reversed_string += queue.pop()
+        reversed_string += stack.pop()
 
     print(reversed_string)
 
