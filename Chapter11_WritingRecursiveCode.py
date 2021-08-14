@@ -18,6 +18,11 @@ def get_array_of_even_numbers(array_of_numbers):
 
 
 def get_triangular_number(number_of_the_sequence):
+    """
+    Get the value of the Triangular Sequence for the giving number in the parameter
+    :param number_of_the_sequence:
+    :return:
+    """
     if number_of_the_sequence == 1:
         return 1
 
