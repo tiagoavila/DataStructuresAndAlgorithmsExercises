@@ -61,6 +61,22 @@ def calculate_greatest_profit_from_single_buy_followed_by_single_sell(stock_pric
     return int(current_sell) - int(current_buy)
 
 
+def calculate_greatest_profit_from_single_buy_followed_by_single_sell_approach2(stock_prices_array):
+    current_buy = stock_prices_array[0]
+    greatest_profit = 0
+
+    for stock_price in stock_prices_array:
+        temp_greatest_profit = stock_price - current_buy
+
+        if stock_price < current_buy:
+            current_buy = stock_price
+
+        if temp_greatest_profit > greatest_profit:
+            greatest_profit = temp_greatest_profit
+
+    return greatest_profit
+
+
 def main():
     basketball_players = [Player("Jill", "Huang"), Player("Janko", "Barton"), Player("Wanda", "Vakulskas"),
                           Player("Jill", "Moloney"), Player("Luuk", "Watkins")]
@@ -78,6 +94,9 @@ def main():
 
     print("Greatest profit is:",
           calculate_greatest_profit_from_single_buy_followed_by_single_sell([10, 7, 5, 8, 11, 2, 6]))
+
+    print("Greatest profit is:",
+          calculate_greatest_profit_from_single_buy_followed_by_single_sell_approach2([10, 7, 5, 8, 11, 2, 6]))
 
 
 if __name__ == "__main__":
